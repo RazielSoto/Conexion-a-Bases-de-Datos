@@ -3,15 +3,15 @@ package datos;
 import java.sql.*;
 
 public class Conexion {
-    
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";//"jdbc:mysql://localhost/test?useSSL=false&serverTimezone=UTC"
+
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/bd_plantas?useSSL=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String JDBC_USER = "root";
-    private static final String JDBC_PASS = "REPTILES";
+    private static final String JDBC_PASSWORD = "REPTILES";
 
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASS);
+        return DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
     }
-
+    
     public static void close(ResultSet rs) {
         try {
             rs.close();
@@ -20,19 +20,20 @@ public class Conexion {
         }
     }
 
-    public static void close(PreparedStatement stmt) {
+    public static void close(PreparedStatement stmn) {
         try {
-            stmt.close();
+            stmn.close();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
     }
-
-    public static void close(Connection conn) {
+    
+    public static void close(Connection conn){
         try {
             conn.close();
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         }
     }
+
 }

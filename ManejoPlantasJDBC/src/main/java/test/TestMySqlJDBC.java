@@ -1,4 +1,4 @@
- package test;
+/*package test;
 
 import java.sql.*;
 import java.util.logging.Level;
@@ -16,8 +16,8 @@ public class TestMySqlJDBC {
             ResultSet resultado = instruccion.executeQuery(sql);
             while (resultado.next()) {
                 System.out.print("Id Persona: " + resultado.getInt("id_persona"));
-                System.out.print(" Nombre: " + resultado.getString("nombre"));
-                System.out.print(" Apellido: " + resultado.getString("apellido"));
+                System.out.print(" Nombre: " + resultado.getString("nombre").toUpperCase());
+                System.out.print(" Apellido: " + resultado.getString("apellido").toUpperCase());
                 System.out.print(" Email: " + resultado.getString("email"));
                 System.out.print(" Telefono: " + resultado.getString("telefono"));
                 System.out.println("");
@@ -30,3 +30,4 @@ public class TestMySqlJDBC {
         }
     }
 }
+*/
